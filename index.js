@@ -60,11 +60,11 @@ let planetsDetails = [
 ]
 
 function manageDetails() {
-    var overview = document.getElementById('overviewDesc')
+    let overview = document.getElementById('overviewDesc')
     overview.style.display = 'block'
-    var internalStructure = document.querySelector('.internalStructureDesc')
+    let internalStructure = document.querySelector('.internalStructureDesc')
     internalStructure.style.display = 'none'
-    var surfaceGeology = document.querySelector('.surfaceGeologyDesc')
+    let surfaceGeology = document.querySelector('.surfaceGeologyDesc')
     surfaceGeology.style.display = 'none'
     document.querySelector('#overviewBtn').addEventListener('click', (e) => {
         document.getElementById('overviewDesc').style.display = 'block'
@@ -117,76 +117,10 @@ function convertKelvinsToCelsius(kelvin){
     return celsius
 }
 
-
 fetchPlanet('earth')
-
 
 document.getElementById('menu').addEventListener('click', e => {
     e.stopPropagation()
     let planet = e.target.text
     fetchPlanet(planet)
 })
-
-
-
-
-
-
-// fetch("https://api.le-systeme-solaire.net/rest/bodies/")
-//     .then(data => data.json())
-//     .then((response) => {
-//         let data = response.bodies
-//         let dataPlanet = data[243]
-//         data[243].description = planetsDetails[0].description
-//         data[243].image = planetsDetails[0].image
-//         let htmlFromTemplate = template(dataPlanet);
-//         document.querySelector('section').innerHTML = htmlFromTemplate;
-//         var overview = document.getElementById('overviewDesc')
-//         overview.style.display = 'block'
-//         var internalStructure = document.querySelector('.internalStructureDesc')
-//         internalStructure.style.display = 'none'
-//         var surfaceGeology = document.querySelector('.surfaceGeologyDesc')
-//         surfaceGeology.style.display = 'none'
-//
-//         document.getElementById('menu').addEventListener('click', e => {
-//             e.stopPropagation()
-//             let planet = e.target.text
-//             data.forEach(body => {
-//                 if(planet === body.englishName) {
-//                     dataPlanet = body
-//                     return dataPlanet
-//                 }
-//             })
-//             planetsDetails.forEach(planet => {
-//                 if(planet.name == dataPlanet.englishName) {
-//                     dataPlanet.image = planet.image
-//                     dataPlanet.description = planet.description
-//                 }
-//             })
-//
-//             let htmlFromTemplate = template(dataPlanet);
-//             document.querySelector('section').innerHTML = htmlFromTemplate;
-//             var overview = document.getElementById('overviewDesc')
-//             overview.style.display = 'block'
-//             var internalStructure = document.querySelector('.internalStructureDesc')
-//             internalStructure.style.display = 'none'
-//             var surfaceGeology = document.querySelector('.surfaceGeologyDesc')
-//             surfaceGeology.style.display = 'none'
-//
-//             document.querySelector('#overviewBtn').addEventListener('click', (e) => {
-//                 document.getElementById('overviewDesc').style.display = 'block'
-//                 internalStructure.style.display = 'none'
-//                 surfaceGeology.style.display = 'none'
-//             })
-//             document.querySelector('#internalBtn').addEventListener('click', () => {
-//                 overview.style.display = 'none'
-//                 internalStructure.style.display = 'block'
-//                 surfaceGeology.style.display = 'none'
-//             })
-//             document.querySelector('#surfaceBtn').addEventListener('click', () => {
-//                 overview.style.display = 'none'
-//                 internalStructure.style.display = 'none'
-//                 surfaceGeology.style.display = 'block'
-//             })
-//         })
-//     })
