@@ -12,9 +12,8 @@ let planetsDetails = [
     },
     {
         name: 'Mercury',
-        description:'Earth is the third planet from the Sun and the only astronomical object known to harbor and support life. About 29.2% of Earth\'s ' +
-            'surface is land consisting of continents and islands. The remaining 70.8% is covered with water, mostly by oceans, seas, gulfs, and other salt-water bodies, ' +
-            'but also by lakes, rivers, and other freshwater, which together constitute the hydrosphere.',
+        description:'Mercury is the smallest planet in the Solar System and the closest to the Sun. ' +
+            'Its orbit around the Sun takes 87.97 Earth days, the shortest of all the Sun\'s planets',
         image:'assets/detailed-planets/4.png'
     },
     {
@@ -26,60 +25,70 @@ let planetsDetails = [
     },
     {
         name: 'Mars',
-        description:'Earth is the third planet from the Sun and the only astronomical object known to harbor and support life. About 29.2% of Earth\'s ' +
-            'surface is land consisting of continents and islands. The remaining 70.8% is covered with water, mostly by oceans, seas, gulfs, and other salt-water bodies, ' +
-            'but also by lakes, rivers, and other freshwater, which together constitute the hydrosphere.',
+        description:'Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, being larger than only Mercury. ' +
+            'In English, Mars carries the name of the Roman god of war and is often referred to as the "Red Planet".',
         image:'assets/detailed-planets/6.png'
     },
     {name: 'Jupiter',
-        description:'Earth is the third planet from the Sun and the only astronomical object known to harbor and support life. About 29.2% of Earth\'s ' +
-            'surface is land consisting of continents and islands. The remaining 70.8% is covered with water, mostly by oceans, seas, gulfs, and other salt-water bodies, ' +
-            'but also by lakes, rivers, and other freshwater, which together constitute the hydrosphere.',
+        description:'Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass more than ' +
+            'two and a half times that of all the other planets in the Solar System combined, but slightly less than one-thousandth the mass of the Sun.',
         image:'assets/detailed-planets/1.png'},
     {
         name: 'Saturn',
-        description:'Earth is the third planet from the Sun and the only astronomical object known to harbor and support life. About 29.2% of Earth\'s ' +
-            'surface is land consisting of continents and islands. The remaining 70.8% is covered with water, mostly by oceans, seas, gulfs, and other salt-water bodies, ' +
-            'but also by lakes, rivers, and other freshwater, which together constitute the hydrosphere.',
+        description:'Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. ' +
+            'It is a gas giant with an average radius of about nine and a half times that of Earth.',
         image:'assets/detailed-planets/5.png'
     },
     {
         name: 'Uranus',
-        description:'Earth is the third planet from the Sun and the only astronomical object known to harbor and support life. About 29.2% of Earth\'s ' +
-            'surface is land consisting of continents and islands. The remaining 70.8% is covered with water, mostly by oceans, seas, gulfs, and other salt-water bodies, ' +
-            'but also by lakes, rivers, and other freshwater, which together constitute the hydrosphere.',
+        description:'Uranus is the seventh planet from the Sun. Its name is a reference to the Greek god of the sky, Uranus, who, according to Greek mythology, ' +
+            'was the great-grandfather of Ares (Mars), grandfather of Zeus (Jupiter) and father of Cronus (Saturn). ',
         image:'assets/detailed-planets/2.png'
     },
     {
         name: 'Neptune',
-        description:'Earth is the third planet from the Sun and the only astronomical object known to harbor and support life. About 29.2% of Earth\'s ' +
-            'surface is land consisting of continents and islands. The remaining 70.8% is covered with water, mostly by oceans, seas, gulfs, and other salt-water bodies, ' +
-            'but also by lakes, rivers, and other freshwater, which together constitute the hydrosphere.',
+        description:'Neptune is the eighth and farthest known Solar planet from the Sun. In the Solar System, ' +
+            'it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet.',
         image:'assets/detailed-planets/7.png'
     }
 ]
 
 function manageDetails() {
-    let overview = document.getElementById('overviewDesc')
-    overview.style.display = 'block'
-    let internalStructure = document.querySelector('.internalStructureDesc')
-    internalStructure.style.display = 'none'
-    let surfaceGeology = document.querySelector('.surfaceGeologyDesc')
-    surfaceGeology.style.display = 'none'
-    document.querySelector('#overviewBtn').addEventListener('click', (e) => {
-        document.getElementById('overviewDesc').style.display = 'block'
-        internalStructure.style.display = 'none'
-        surfaceGeology.style.display = 'none'
+
+    let overviewBtn = document.querySelector('#overviewBtn')
+    let internalBtn = document.querySelector('#internalBtn')
+    let surfaceBtn = document.querySelector('#surfaceBtn')
+    overviewBtn.classList.add('selected')
+
+    let overview = document.querySelector('#overviewDesc')
+    let internalStructure = document.querySelector('#internalStructureDesc')
+    internalStructure.classList.add('d-none')
+    let surfaceGeology = document.querySelector('#surfaceGeologyDesc')
+    surfaceGeology.classList.add('d-none')
+
+    overviewBtn.addEventListener('click', (e) => {
+        internalBtn.classList.remove('selected')
+        overviewBtn.classList.add('selected')
+        surfaceBtn.classList.remove('selected')
+        overview.classList.remove('d-none')
+        internalStructure.classList.add('d-none')
+        surfaceGeology.classList.add('d-none')
     })
-    document.querySelector('#internalBtn').addEventListener('click', () => {
-        overview.style.display = 'none'
-        internalStructure.style.display = 'block'
-        surfaceGeology.style.display = 'none'
+    internalBtn.addEventListener('click', () => {
+        internalBtn.classList.add('selected')
+        overviewBtn.classList.remove('selected')
+        surfaceBtn.classList.remove('selected')
+        overview.classList.add('d-none')
+        internalStructure.classList.remove('d-none')
+        surfaceGeology.classList.add('d-none')
     })
-    document.querySelector('#surfaceBtn').addEventListener('click', () => {
-        overview.style.display = 'none'
-        internalStructure.style.display = 'none'
-        surfaceGeology.style.display = 'block'
+    surfaceBtn.addEventListener('click', () => {
+        internalBtn.classList.remove('selected')
+        overviewBtn.classList.remove('selected')
+        surfaceBtn.classList.add('selected')
+        overview.classList.add('d-none')
+        internalStructure.classList.add('d-none')
+        surfaceGeology.classList.remove('d-none')
     })
 }
 

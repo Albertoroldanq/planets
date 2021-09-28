@@ -1,10 +1,15 @@
+html {
+    font-size: 16px;
+}
+
 body {
     background-image:url(https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2870&q=80);
     color: #fff;
 }
 
 header {
-    padding: 10px 0;
+    background: rgba(30, 30, 30, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 section {
@@ -16,8 +21,13 @@ section {
 }
 
 .planetDetails {
-    padding: 50px;
-    background: rgba(30, 30, 30, 0.6);
+    padding: 20px 50px 50px 50px;
+    background: rgba(30, 30, 30, 0.7);
+    height: 600px;
+}
+
+.overviewDesc, .internalStructureDesc, .surfaceGeologyDesc {
+    font-size: 1rem;
 }
 
 .planetStats {
@@ -25,11 +35,11 @@ section {
 }
 
 .planetStats div {
-    background: rgba(30, 30, 30, 0.6);
+    background: rgba(30, 30, 30, 0.7);
 }
 
 .detailsBtn {
-    background: #510be3;
+    border: 1px solid #ccc;
     padding: 15px;
     cursor: default;
 }
@@ -38,18 +48,14 @@ section {
     text-decoration: none;
     cursor: pointer;
     background: #4106bd;
-}
-
-.planetDetails p {
-    font-size: 20px;
+    border: 1px solid #4106bd;
 }
 
 .menu-item {
     cursor: default;
     color: #fff;
     height: 100%;
-    vertical-align: baseline;
-    padding: 12px 10px 8px 10px;
+    font-size: 20px;
 }
 
 .menu-item:hover {
@@ -57,4 +63,15 @@ section {
     background: #fff;
     color: black;
     cursor: pointer;
+}
+
+.selected {
+    border: 1px solid #510be3;
+    background: #510be3;
+    cursor: default;
+}
+
+.selected:hover {
+    cursor: default;
+    background: #510be3;
 }

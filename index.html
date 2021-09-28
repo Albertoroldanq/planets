@@ -7,14 +7,18 @@
   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
   <script id="myTemplate" type="text/x-handlebars-template">
     <div class="row mb-4 d-flex justify-content-between">
-      <div class="col-7 justify-content-center align-items-center d-flex mt-4 planetContainer">
-        <img height="600" src="{{image}}">
+      <div class="col-7 justify-content-center align-items-start d-flex mt-4 planetContainer">
+        <img height="400" src="{{image}}">
       </div>
       <div class="col-5 planetDetails d-flex flex-column align-items-start justify-content-between">
-          <h2 class="display-1">
+          <form class="mb-3">
+              <input class="mr-2 w-70 py-1 px-2" type="text" placeholder="search your planet">
+              <input class="py-1 px-3" type="submit" value="Search">
+          </form>
+          <h2 class="h2">
             {{englishName}}
           </h2>
-          <div class="my-4">
+          <div class="my-0">
             <p id="overviewDesc" class="overviewDesc">
               {{description}}
             </p>
@@ -26,7 +30,7 @@
             </p>
           </div>
 
-          <div class="d-flex flex-column w-100 mt-4">
+          <div class="d-flex flex-column w-100 mt-0">
             <p>Source: <a>Wikipedia</a></p>
             <a id="overviewBtn" class="detailsBtn mb-3 text-white h5"><span class="col-3">01</span><span class="col-4">OVERVIEW</span></a>
             <a id="internalBtn" class="detailsBtn mb-3 text-white h5"><span class="col-3">02</span><span class="col-4">INTERNAL STRUCTURE</span></a>
@@ -36,19 +40,19 @@
     </div>
 
     <div class="planetStats row d-flex justify-content-between">
-      <div class="col-2 d-flex flex-column justify-content-center p-4">
+      <div class="col-2 d-flex flex-column justify-content-center p-4 rounded">
           <p class="text-uppercase">Average Temp</p>
           <p class="h2 mb-0">{{avgTemp}} °C</p>
       </div>
-      <div class="col-3 d-flex flex-column justify-content-center p-4">
+      <div class="col-3 d-flex flex-column justify-content-center p-4 rounded">
           <p class="text-uppercase">Revolution Time</p>
           <p class="h2 mb-0">{{sideralOrbit}} DAYS</p>
       </div>
-      <div class="col-2 d-flex flex-column justify-content-center p-4">
+      <div class="col-2 d-flex flex-column justify-content-center p-4 rounded">
           <p class="text-uppercase">Radius</p>
           <p class="h2 mb-0">{{meanRadius}} KM</p>
       </div>
-      <div class="col-3 d-flex flex-column justify-content-center p-4">
+      <div class="col-3 d-flex flex-column justify-content-center p-4 rounded">
           <p class="text-uppercase">Rotation time</p>
           <p class="h2 mb-0">{{sideralRotation}} DAYS</p>
       </div>
@@ -62,17 +66,19 @@
   <title>Title</title>
 </head>
 <body class="">
-  <header class="d-flex flex-row justify-content-between border-bottom border-light">
-    <h1 class="col-4">THE PLANETS</h1>
-    <div id="menu" class="menu d-flex flex-row col-6 text-decoration-none justify-content-around align-items-center mb-0 text-uppercase font-weight-bold h5">
-      <a class="menu-item">Mercury</a>
-      <a class="menu-item">Venus</a>
-      <a class="menu-item">Earth</a>
-      <a class="menu-item">Mars</a>
-      <a class="menu-item">Jupiter</a>
-      <a class="menu-item">Saturn</a>
-      <a class="menu-item">Uranus</a>
-      <a class="menu-item">Neptune</a>
+  <header class="d-flex flex-row justify-content-between px-3 py-0">
+      <div class="d-flex flex-column justify-content-center">
+          <h1 class="p-0 m-0">THE PLANETS</h1>
+      </div>
+    <div id="menu" class="menu d-flex flex-row text-decoration-none justify-content-around align-items-center mb-0 text-uppercase font-weight-bold">
+      <a class="menu-item px-2 py-4 mx-1">Mercury</a>
+      <a class="menu-item px-2 py-4 mx-1">Venus</a>
+      <a class="menu-item px-2 py-4 mx-1">Earth</a>
+      <a class="menu-item px-2 py-4 mx-1">Mars</a>
+      <a class="menu-item px-2 py-4 mx-1">Jupiter</a>
+      <a class="menu-item px-2 py-4 mx-1">Saturn</a>
+      <a class="menu-item px-2 py-4 mx-1">Uranus</a>
+      <a class="menu-item px-2 py-4 mx-1">Neptune</a>
     </div>
   </header>
   <main class="container-fluid">
