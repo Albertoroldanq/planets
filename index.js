@@ -1,6 +1,5 @@
 const sourceForTemplate = document.querySelector('#myTemplate').innerHTML;
 const template = Handlebars.compile(sourceForTemplate);
-console.log('hello')
 
 let planetsDetails = [
     {
@@ -100,7 +99,6 @@ function fetchPlanet(planet){
                 response.description = planet.description
             }
         })
-
         response.sideralRotation /= 24
         response.sideralRotation = truncateNumbers(response.sideralRotation)
         response.meanRadius = truncateNumbers(response.meanRadius)
